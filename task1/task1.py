@@ -1,5 +1,6 @@
-n = (int(input("Длинна массива: ")))
-m = (int(input("Длина интервала: ")))
+from sys import argv
+n = int(argv[1])
+m = int(argv[2])
 
 cycmas = [i+1 for i in range(n)]
 k = True
