@@ -1,7 +1,13 @@
 import json
 from sys import argv
 
-
+try:
+    file1 = argv[1]
+    file2 = argv[2]
+    file3 = argv[3]
+except IndexError:
+    print("Need all 3 arguments with filepath")
+    exit(1)
 def insertValue(li):
     for test in li:
         try:
@@ -13,9 +19,9 @@ def insertValue(li):
     return
 
 
-with open(argv[1], "r") as f:
+with open(file1, "r") as f:
     tests = json.load(f)
-with open(argv[2], "r") as f:
+with open(file2, "r") as f:
     values = json.load(f)
 
 tests = tests['tests']
@@ -27,5 +33,6 @@ for value in values:
 
 insertValue(tests)
 
-with open("report.json", "w") as f:
+with open(file3, "w") as f:
     json.dump(tests, f, indent=2)
+

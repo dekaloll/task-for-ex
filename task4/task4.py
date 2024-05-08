@@ -1,7 +1,14 @@
 import sys
 
-file1 = sys.argv[1]
-# file1 = 'nums.txt'
+# file1 = sys.argv[1]
+
+# try:
+#     file1 = argv[1]
+# except IndexError:
+#     print("Need argument with filepath")
+#     exit(1)
+
+file1 = 'nums.txt'
 with open(file1) as file:
     nums = ([line.rstrip() for line in file])
 
@@ -19,7 +26,6 @@ for index, i in enumerate(nums):
         elif i > avarage:
             i -= 1
             step += 1
-        else:
-           nums[index] = i
+
 
 print(step)
